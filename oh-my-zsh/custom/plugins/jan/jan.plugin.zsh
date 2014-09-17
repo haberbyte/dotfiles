@@ -15,6 +15,9 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 zstyle ':completion:*' insert-tab false
 
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+
 # autocorrect is more annoying than helpful
 unsetopt correct_all
 
@@ -40,6 +43,8 @@ setopt                          \
         prompt_percent          \
         prompt_subst            \
         rm_star_wait
+
+cdpath=($HOME $HOME/work $HOME/work/unitymedia)
 
 # add plugin's bin directory to path
 export PATH="$(dirname $0)/bin:$PATH"
