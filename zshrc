@@ -14,7 +14,6 @@ export LC_MESSAGES="en_US.UTF-8"
 export LC_MONETARY="en_US.UTF-8"
 export LC_NUMERIC="en_US.UTF-8"
 export LC_TIME="en_US.UTF-8"
-export LC_ALL=
 
 export PATH="/usr/local/bin:$PATH"
 export EDITOR='mate -w'
