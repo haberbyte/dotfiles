@@ -6,6 +6,10 @@ h() { cd ~/$1; }
 _h() { _files -W ~/ -/; }
 compdef _h h
 
+export CLICOLOR=1
+export LSCOLORS=Gxfxcxdxbxegedabagacad
+export LS_COLORS='di=36;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;30:sg=46;30:tw=42;30:ow=43;30:'
+
 # Zsh to use the same colors as ls
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
@@ -36,10 +40,6 @@ setopt                          \
         prompt_percent          \
         prompt_subst            \
         rm_star_wait
-
-export CLICOLOR=1
-export LSCOLORS=Gxfxcxdxbxegedabagacad
-export LS_COLORS='di=36;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;30:sg=46;30:tw=42;30:ow=43;30:'
 
 # add plugin's bin directory to path
 export PATH="$(dirname $0)/bin:$PATH"
