@@ -8,7 +8,7 @@ excludeDirectories = "build,dist,tmp,log"
 
 encoding        = UTF-8
 fontName        = "Menlo" 
-fontSize        = 12
+fontSize        = 13
 tabSize         = 2
 softTabs        = true
 sofWrap         = false
