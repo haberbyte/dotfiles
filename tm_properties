@@ -1,0 +1,26 @@
+TM_GIT         = "/usr/local/bin/git"
+TM_HG          = "/usr/local/bin/hg"
+
+excludeFiles   = "*.{so,pyc,o,scssc,war}"
+excludeDirectories = "build,dist,tmp,log"
+
+fontName       = "Bitstream Vera Sans Mono" 
+fontSize       = 13
+tabSize        = 2
+softTabs       = true
+wrapColumn     = "Use Window Frame"
+sofWrap        = false
+showInvisibles = false
+
+# special per-filetype rules can be specified like so:
+[ *.{txt,md,mdown,markdown} ]
+softTabs = true
+tabSize = 2
+
+[ source.ruby ]
+softTabs = true
+tabSize  = 2
+
+[ source.coffee ]
+softTabs = true
+tabSize  = 2
