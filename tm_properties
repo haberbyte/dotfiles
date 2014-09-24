@@ -6,7 +6,7 @@ TM_HG           = "/usr/local/bin/hg"
 include = "{$include,.gitignore,.htpasswd,.*rc,.*env,.ruby-version}"
 excludeFiles = "*.{so,pyc,o,scssc,war}"
 excludeDirectories = "build,dist,tmp,log"
-excludeInFolderSearch = "{$excludeInFolderSearch,tmp,*.{jar,war}}"
+excludeInFolderSearch = "{$excludeInFolderSearch,tmp,log,*.{jar,war}}"
 
 encoding        = UTF-8
 fontName        = "Menlo" 
