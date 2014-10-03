@@ -18,6 +18,9 @@ zstyle ':completion:*' insert-tab false
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 
+alias ri='noglob ri'
+alias rake="noglob rake"
+
 # autocorrect is more annoying than helpful
 unsetopt correct_all
 
