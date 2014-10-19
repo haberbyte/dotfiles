@@ -7,3 +7,4 @@ vim/.VimballRecord
 atom/packages
 atom/storage
 atom/compile-cache
+atom/.*
