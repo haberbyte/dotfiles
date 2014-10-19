@@ -4,3 +4,6 @@
 .*.swp
 vim/.netrwhist
 vim/.VimballRecord
+atom/packages
+atom/storage
+atom/compile-cache
