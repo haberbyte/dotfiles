@@ -1,0 +1,20 @@
+AllCops:
+  Include:
+    - '**/config.ru'
+  Exclude:
+   - 'db/**/*'
+   - Rakefile
+   - Capfile
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  CountComments: false
+  Max: 20
+
+AccessModifierIndentation:
+  EnforcedStyle: indent
+
+ # Style/EmptyLinesAroundAccessModifier:
+ #   Enabled: false

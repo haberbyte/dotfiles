@@ -2,8 +2,7 @@
 .svn
 *~
 .*.swp
-vim/.netrwhist
-vim/.VimballRecord
+vim/.*
 atom/packages
 atom/storage
 atom/compile-cache

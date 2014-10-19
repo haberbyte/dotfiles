@@ -2,10 +2,10 @@
 
 ## Installation
 
-Run the following commands in your terminal. It will prompt you before it does anything destructive. Check out the [Rakefile](https://github.com/ryanb/dotfiles/blob/custom-bash-zsh/Rakefile) to see exactly what it does.
+Run the following commands in your terminal. It will prompt you before it does anything destructive.
 
 ```terminal
-git clone git://github.com/ryanb/dotfiles ~/.dotfiles
+git clone git://github.com/habermann24/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 rake install
 ```
@@ -17,9 +17,7 @@ Feel free to customize the .zshrc file to match your preference.
 
 ## Features
 
-Many of the following features are added through the "rbates" Oh My ZSH plugin.
-
-I normally place all of my coding projects in ~/code, so this directory can easily be accessed (and tab completed) with the "c" command.
+I normally place all of my coding projects in ~/word, so this directory can easily be accessed (and tab completed) with the "c" command.
 
 ```terminal
 c railsca<tab>
@@ -53,7 +51,6 @@ To remove the dotfile configs, run the following commands. Be certain to double 
 unlink ~/.bin
 unlink ~/.gitignore
 unlink ~/.gemrc
-unlink ~/.gvimrc
 unlink ~/.irbrc
 unlink ~/.vim
 unlink ~/.vimrc

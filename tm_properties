@@ -9,7 +9,7 @@ excludeDirectories = "build,dist,tmp,log"
 excludeInFolderSearch = "{$excludeInFolderSearch,tmp,log,*.{jar,war}}"
 
 encoding        = UTF-8
-fontName        = "Menlo" 
+fontName        = "Menlo"
 fontSize        = 13
 tabSize         = 2
 softTabs        = true

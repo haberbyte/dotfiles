@@ -7,7 +7,7 @@ class TagVersions
     @preview = false
     args.each do |argument|
       case argument
-      when '-a', '--all' then @regexp = ".*"
+      when '-a', '--all' then @regexp = '.*'
       when '-p', '--preview' then @preview = true
       when '-h', '--help' then print_help
       else @regexp = argument
@@ -42,4 +42,4 @@ HELP
   end
 end
 
-TagVersions.new($*).run
+TagVersions.new($ARGV).run

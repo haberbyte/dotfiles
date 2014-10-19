@@ -3,16 +3,17 @@
   email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
 [alias]
   co = checkout
+  mg = merge
   pu = pull --rebase
   su = submodule update
-  lg = log --graph --format='%cd %C(yellow)%h%C(auto)%d%Creset%C(cyan) [%cn]%Creset %s' --date=short --abbrev=10
+  lg = log --graph --abbrev-commit --pretty=format:'%C(auto)%h -%d %s %Cred(%an, %cr)%Creset'
 [color]
   diff = auto
   status = auto
   branch = auto
 [core]
   excludesfile = <%= ENV['HOME'] %>/.gitignore
-  editor = mate -w
+  editor = atom --wait
   autocrlf = input
 [format]
   pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
