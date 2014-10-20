@@ -47,7 +47,7 @@ setopt                          \
         prompt_subst            \
         rm_star_wait
 
-cdpath=($HOME $HOME/work $HOME/Documents/Projects)
+cdpath=($HOME $HOME/Documents $HOME/Documents/code $HOME/Documents/projects)
 
 # add plugin's bin directory to path
 export PATH="$(dirname $0)/bin:$PATH"
