@@ -13,8 +13,14 @@ Metrics/MethodLength:
   CountComments: false
   Max: 20
 
-AccessModifierIndentation:
+Style/AccessModifierIndentation:
   EnforcedStyle: indent
+
+Style/SpecialGlobalVars:
+  Enabled: false
+
+Style/SignalException:
+  EnforcedStyle: only_raise
 
  # Style/EmptyLinesAroundAccessModifier:
  #   Enabled: false

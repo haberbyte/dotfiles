@@ -33,13 +33,13 @@ HELP
     `git log --pretty="%H %s" | grep "#{@regexp}"`.split("\n").each do |line|
       version = line[/\bv?(\d\.[\d\.]*)\b/, 1]
       sha = line[/^\w+/]
-      if version && !version.empty? && !tags.include?(version)
-        puts "Tagging #{version} on #{sha}"
-        tags << version
-        `git tag -a "#{version}" -m "version #{version}" "#{sha}"` unless @preview
-      end
+      next if version && !version.empty? && !tags.include?(version)
+
+      puts "Tagging #{version} on #{sha}"
+      tags << version
+      `git tag -a "#{version}" -m "version #{version}" "#{sha}"` unless @preview
     end
   end
 end
 
-TagVersions.new($ARGV).run
+TagVersions.new(ARGV).run

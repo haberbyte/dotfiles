@@ -17,6 +17,7 @@ export LC_TIME="en_US.UTF-8"
 
 export PATH="/usr/local/bin:$PATH"
 export EDITOR='atom --wait'
+export LESS="-RFX"
 
 source $ZSH/oh-my-zsh.sh
 
