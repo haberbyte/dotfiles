@@ -3,6 +3,7 @@
 *~
 .*.swp
 vim/.*
+atom/dev
 atom/packages
 atom/storage
 atom/compile-cache
