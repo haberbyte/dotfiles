@@ -18,4 +18,4 @@
     'confirmCheckoutHeadRevision': false
     'fontSize': 14
     'fontFamily': 'Menlo'
-    'invisibles': {}
+  'git-blame': {}
