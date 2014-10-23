@@ -6,7 +6,7 @@ task :install do
   install_oh_my_zsh
   switch_to_zsh
   replace_all = false
-  files = Dir['*'] - %w(Rakefile README.rdoc LICENSE oh-my-zsh)
+  files = Dir['*'] - %w(Rakefile README.md LICENSE TAGS oh-my-zsh)
   files << 'oh-my-zsh/custom/plugins/jan'
   files << 'oh-my-zsh/custom/plugins/zsh-syntax-highlighting'
   files << 'oh-my-zsh/custom/jan.zsh-theme'

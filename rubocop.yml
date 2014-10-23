@@ -1,10 +1,10 @@
 AllCops:
-  Include:
-    - '**/config.ru'
   Exclude:
+   - 'Rakefile'
+   - 'Gemfile'
+   - 'Capfile'
    - 'db/**/*'
-   - Rakefile
-   - Capfile
+   - 'db/schema.rb'
 
 Metrics/LineLength:
   Enabled: false
@@ -21,6 +21,12 @@ Style/SpecialGlobalVars:
 
 Style/SignalException:
   EnforcedStyle: only_raise
+
+# Style/FileName:
+#   Exclude:
+#     - '**/Rakefile'
+#     - '**/Gemfile'
+#     - '**/Capfile'
 
  # Style/EmptyLinesAroundAccessModifier:
  #   Enabled: false
