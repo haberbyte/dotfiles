@@ -5,6 +5,7 @@
 --exclude=jquery-*.js
 --exclude=node_modules
 --exclude=vendor
+--exclude=doc
 
 --langdef=CoffeeScript
 --langmap=CoffeeScript:.coffee
