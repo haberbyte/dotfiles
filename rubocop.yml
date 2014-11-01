@@ -13,20 +13,32 @@ Metrics/MethodLength:
   CountComments: false
   Max: 20
 
-Style/AccessModifierIndentation:
-  EnforcedStyle: indent
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+Style/CollectionMethods:
+  Enabled: false
 
 Style/SpecialGlobalVars:
   Enabled: false
 
+Style/AccessModifierIndentation:
+  EnforcedStyle: indent
+
 Style/SignalException:
   EnforcedStyle: only_raise
 
-# Style/FileName:
-#   Exclude:
-#     - '**/Rakefile'
-#     - '**/Gemfile'
-#     - '**/Capfile'
+Style/AndOr:
+  EnforcedStyle: conditionals
 
- # Style/EmptyLinesAroundAccessModifier:
- #   Enabled: false
+Style/FileName:
+  Exclude:
+    - 'Rakefile'
+    - 'Gemfile'
+    - 'Capfile'
+    - '**/Rakefile'
+    - '**/Gemfile'
+    - '**/Capfile'
