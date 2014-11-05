@@ -17,12 +17,23 @@
   autocrlf = input
 [format]
   pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
-[github]
-  user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
-  token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
+[init]
+  templatedir = ~/.git_templates
 [push]
   default = simple
 [rerere]
   enabled = true
-[init]
-  templatedir = ~/.git_templates
+[diff]
+  tool = Kaleidoscope
+[merge]
+  tool = Kaleidoscope
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustexitcode = true
+  prompt = false
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+  prompt = false
+[github]
+  user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
+  token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>

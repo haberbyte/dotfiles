@@ -16,6 +16,7 @@
     'userId': '9e4d32b140be1cb4e975a34a65c17fc15d35c6d7'
   'editor':
     'confirmCheckoutHeadRevision': false
-    'fontSize': 14
     'fontFamily': 'Menlo'
+    'fontSize': 14
     'invisibles': {}
+  'linter': {}
