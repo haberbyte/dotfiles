@@ -25,6 +25,9 @@ Style/CollectionMethods:
 Style/SpecialGlobalVars:
   Enabled: false
 
+Style/FormatString:
+  Enabled: false
+
 Style/AccessModifierIndentation:
   EnforcedStyle: indent
 
