@@ -1,11 +1,3 @@
-c() { cd ~/code/$1; }
-_c() { _files -W ~/code -/; }
-compdef _c c
-
-h() { cd ~/$1; }
-_h() { _files -W ~/ -/; }
-compdef _h h
-
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 export LS_COLORS='di=36;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;30:sg=46;30:tw=42;30:ow=43;30:'
