@@ -7,6 +7,7 @@
     ]
     'disabledPackages': [
       'open-on-github'
+      'linter-scss-lint'
     ]
   'welcome':
     'showOnStartup': false
