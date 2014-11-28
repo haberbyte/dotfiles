@@ -19,7 +19,6 @@
     'confirmCheckoutHeadRevision': false
     'fontFamily': 'Menlo'
     'fontSize': 14
-    'invisibles': {}
   'linter':
     'lintOnChange': false
     'showHighlighting': false
