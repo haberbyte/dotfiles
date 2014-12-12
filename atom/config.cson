@@ -22,3 +22,5 @@
   'linter':
     'lintOnChange': false
     'showHighlighting': false
+  'tree-view':
+    'hideVcsIgnoredFiles': true
