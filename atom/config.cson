@@ -1,4 +1,4 @@
-'global':
+'*':
   'core':
     'ignoredNames': [
       '.git'
@@ -16,9 +16,9 @@
   'metrics':
     'userId': '9e4d32b140be1cb4e975a34a65c17fc15d35c6d7'
   'editor':
-    'confirmCheckoutHeadRevision': false
     'fontFamily': 'Menlo'
     'fontSize': 14
+    'confirmCheckoutHeadRevision': false
   'linter':
     'lintOnChange': false
     'showHighlighting': false
