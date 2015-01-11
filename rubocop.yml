@@ -40,6 +40,9 @@ Style/SignalException:
 Style/AndOr:
   EnforcedStyle: conditionals
 
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
 Style/FileName:
   Exclude:
     - 'Rakefile'

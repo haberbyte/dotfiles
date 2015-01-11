@@ -18,7 +18,9 @@
   'editor':
     'fontFamily': 'Menlo'
     'fontSize': 14
+    'preferredLineLength': 120
     'confirmCheckoutHeadRevision': false
+    'invisibles': {}
   'linter':
     'lintOnChange': false
     'showHighlighting': false
