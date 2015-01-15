@@ -1,28 +1,28 @@
-'*':
-  'core':
-    'ignoredNames': [
-      '.git'
-      '.svn'
-      '.DS_Store'
+"*":
+  core:
+    ignoredNames: [
+      ".git"
+      ".svn"
+      ".DS_Store"
     ]
-    'disabledPackages': [
-      'open-on-github'
-      'linter-scss-lint'
+    disabledPackages: [
+      "open-on-github"
+      "linter-scss-lint"
     ]
-  'welcome':
-    'showOnStartup': false
-  'exception-reporting':
-    'userId': '93eefc96-d01a-1960-59e4-71ddef94eb74'
-  'metrics':
-    'userId': '9e4d32b140be1cb4e975a34a65c17fc15d35c6d7'
-  'editor':
-    'fontFamily': 'Menlo'
-    'fontSize': 14
-    'preferredLineLength': 120
-    'confirmCheckoutHeadRevision': false
-    'invisibles': {}
-  'linter':
-    'lintOnChange': false
-    'showHighlighting': false
-  'tree-view':
-    'hideVcsIgnoredFiles': true
+  welcome:
+    showOnStartup: false
+  "exception-reporting":
+    userId: "93eefc96-d01a-1960-59e4-71ddef94eb74"
+  metrics:
+    userId: "9e4d32b140be1cb4e975a34a65c17fc15d35c6d7"
+  editor:
+    fontFamily: "Menlo"
+    fontSize: 14
+    preferredLineLength: 120
+    confirmCheckoutHeadRevision: false
+    invisibles: {}
+  linter:
+    lintOnChange: false
+    showHighlighting: false
+  "tree-view":
+    hideVcsIgnoredFiles: true
