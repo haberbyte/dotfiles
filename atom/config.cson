@@ -23,7 +23,9 @@
     invisibles: {}
   linter:
     lintOnChange: false
-    showHighlighting: false
+    showErrorInline: false
     showInfoMessages: true
+    statusBar: "Show error of the selected line"
+    showHighlighting: false
   "tree-view":
     hideVcsIgnoredFiles: true
