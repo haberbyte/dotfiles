@@ -27,5 +27,4 @@
     showInfoMessages: true
     statusBar: "Show error of the selected line"
     showHighlighting: false
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
