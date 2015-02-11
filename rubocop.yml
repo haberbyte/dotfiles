@@ -1,4 +1,5 @@
 AllCops:
+  RunRailsCops: true
   Exclude:
    - 'Rakefile'
    - 'Gemfile'
@@ -23,6 +24,9 @@ Lint/EndAlignment:
   AlignWith: variable
 
 Style/CollectionMethods:
+  Enabled: false
+
+Style/GuardClause:
   Enabled: false
 
 Style/SpecialGlobalVars:
