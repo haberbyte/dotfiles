@@ -3,4 +3,5 @@
 *~
 .*.swp
 .powenv
+.rake_tasks
 TAGS
