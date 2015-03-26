@@ -27,4 +27,8 @@
     showInfoMessages: true
     statusBar: "Show error of the selected line"
     showHighlighting: false
-  "tree-view": {}
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
+  "linter-rubocop": {}
+  "fuzzy-finder": {}
