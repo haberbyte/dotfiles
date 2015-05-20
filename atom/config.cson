@@ -20,7 +20,8 @@
     fontSize: 14
     preferredLineLength: 120
     confirmCheckoutHeadRevision: false
-    invisibles: {}
+    invisibles:
+      {}
   linter:
     lintOnChange: false
     showErrorInline: false
@@ -30,5 +31,9 @@
   "tree-view":
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true
-  "linter-rubocop": {}
-  "fuzzy-finder": {}
+  "linter-rubocop":
+    {}
+  "fuzzy-finder":
+    {}
+  "one-dark-ui":
+    layoutMode: "Compact"
