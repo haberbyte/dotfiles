@@ -19,8 +19,7 @@
     fontFamily: "Menlo"
     preferredLineLength: 120
     confirmCheckoutHeadRevision: false
-    invisibles:
-      {}
+    invisibles: {}
   linter:
     lintOnChange: false
     statusBar: "Show error of the selected line"
