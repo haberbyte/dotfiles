@@ -17,23 +17,26 @@
     userId: "9e4d32b140be1cb4e975a34a65c17fc15d35c6d7"
   editor:
     fontFamily: "Menlo"
-    fontSize: 14
     preferredLineLength: 120
     confirmCheckoutHeadRevision: false
     invisibles:
       {}
   linter:
     lintOnChange: false
-    showErrorInline: false
-    showInfoMessages: true
     statusBar: "Show error of the selected line"
-    showHighlighting: false
+    showHighlighting: true
+    subtleLinterErrors: [
+      "rubocop"
+    ]
+    showInfoMessages: true
+    showErrorPanel: false
   "tree-view":
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true
-  "linter-rubocop":
-    {}
-  "fuzzy-finder":
-    {}
+  "linter-rubocop": {}
+  "fuzzy-finder": {}
+  "autocomplete-plus": {}
   "one-dark-ui":
     layoutMode: "Compact"
+  tabs:
+    enableVcsColoring: true
