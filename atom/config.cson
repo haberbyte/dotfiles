@@ -32,7 +32,8 @@
   "tree-view":
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true
-  "linter-rubocop": {}
+  "linter-rubocop":
+    command: "/Users/jan/.rbenv/shims/rubocop"
   "fuzzy-finder": {}
   "autocomplete-plus": {}
   "one-dark-ui":
