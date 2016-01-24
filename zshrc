@@ -5,7 +5,7 @@ DISABLE_LS_COLORS="true"
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
-plugins=(git bundler brew gem jan zsh-syntax-highlighting capistrano rake-fast)
+plugins=(git bundler brew gem jan capistrano rake-fast zsh-syntax-highlighting)
 
 export LANG="en_US.UTF-8"
 export LC_COLLATE="en_US.UTF-8"
