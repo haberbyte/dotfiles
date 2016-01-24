@@ -1,11 +1,13 @@
 AllCops:
-  RunRailsCops: true
   Exclude:
    - 'Rakefile'
    - 'Gemfile'
    - 'Capfile'
    - 'db/**/*'
    - 'db/schema.rb'
+
+  Rails:
+    Enabled: true
 
 Metrics/LineLength:
   Enabled: false
