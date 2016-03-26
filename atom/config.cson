@@ -1,41 +1,55 @@
 "*":
+  "autocomplete-plus": {}
   core:
+    disabledPackages: [
+      "open-on-github"
+      "linter-scss-lint"
+    ]
     ignoredNames: [
       ".git"
       ".svn"
       ".DS_Store"
     ]
-    disabledPackages: [
-      "open-on-github"
-      "linter-scss-lint"
-    ]
-  welcome:
-    showOnStartup: false
+  editor:
+    confirmCheckoutHeadRevision: false
+    fontFamily: "Menlo"
+    invisibles: {}
+    preferredLineLength: 120
+    showInvisibles: true
   "exception-reporting":
     userId: "93eefc96-d01a-1960-59e4-71ddef94eb74"
-  metrics:
-    userId: "9e4d32b140be1cb4e975a34a65c17fc15d35c6d7"
-  editor:
-    fontFamily: "Menlo"
-    preferredLineLength: 120
-    confirmCheckoutHeadRevision: false
-    invisibles: {}
+  "fuzzy-finder": {}
+  "git-history":
+    showDiff: false
   linter:
     lintOnChange: false
-    statusBar: "Show error of the selected line"
+    showErrorPanel: false
     showHighlighting: true
+    showInfoMessages: true
+    statusBar: "Show error of the selected line"
     subtleLinterErrors: [
       "rubocop"
     ]
-    showInfoMessages: true
-    showErrorPanel: false
+  "linter-rubocop":
+    command: "/Users/jan/.rbenv/shims/rubocop"
+  metrics:
+    userId: "9e4d32b140be1cb4e975a34a65c17fc15d35c6d7"
+  minimap: {}
+  "one-dark-ui":
+    layoutMode: "Compact"
+  pigments:
+    markerType: "dot"
+  react: {}
+  tabs:
+    enableVcsColoring: true
   "tree-view":
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true
-  "fuzzy-finder": {}
-  "autocomplete-plus": {}
-  "one-dark-ui":
-    layoutMode: "Compact"
-  tabs:
-    enableVcsColoring: true
-  react: {}
+  welcome:
+    showOnStartup: false
+".coffee.jsx.source":
+  editor:
+    preferredLineLength: 120
+".js.jsx.source":
+  editor:
+    preferredLineLength: 120
