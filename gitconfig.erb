@@ -7,9 +7,6 @@
   pu = pull --rebase
   su = submodule update
   lg = log --graph --abbrev-commit --pretty=format:'%C(auto)%h %s %Cred(%an, %cr)%C(auto)%d%Creset'
-  publish = "!f() { reviewer=""; if [ "x$2" != "x" ]; then reviewer="%r=$2"; fi; git push origin HEAD:refs/for/$1$reviewer; }; f"
-  draft = "!sh -c 'git push origin HEAD:refs/drafts/$1' -"
-  push-sandbox = "!sh -c 'git push -f --set-upstream origin HEAD:sandbox/$USER/$1' -"
 [color]
   diff = auto
   status = auto
@@ -21,8 +18,6 @@
   ignorecase = false
 [format]
   pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
-[init]
-  templatedir = ~/.git_templates
 [push]
   default = simple
 [rerere]
