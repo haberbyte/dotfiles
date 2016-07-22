@@ -1,198 +1,203 @@
-set nocompatible
-
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
-set nobackup
-set nowritebackup
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
-
-" Don't use Ex mode, use Q for formatting
-map Q gq
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-  set hlsearch
+" are we on a mac?
+if has("unix")
+  let s:uname = system("uname")
+  if s:uname == "Darwin\n"
+    let isMac = 1
+  else
+    let isMac = 0
+  endif
 endif
 
-" Switch wrap off for everything
-set nowrap
+set nocompatible              " be iMproved, required
+filetype off                  " required
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-rails.git'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-bundler'
+Plugin 'wincent/Command-T'
+Plugin 'vim-scripts/YankRing.vim'
+Plugin 'vim-scripts/Rename2'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-scripts/ZoomWin'
+Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdcommenter.git'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'tsaleh/vim-align'
+Plugin 'bling/vim-airline'
+Plugin 'skalnik/vim-vroom'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'airblade/vim-gitgutter'
+"Plugin 'orchardpie/vim-jshint'
+"Plugin 'Shougo/neocomplete'
+Plugin 'ngmy/vim-rubocop'
 
-  " Set File type to 'text' for files ending in .txt
-  autocmd BufNewFile,BufRead *.txt setfiletype text
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
-  " Enable soft-wrapping for text files
-  autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
+let mapleader=","
 
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
+let g:syntastic_javascript_jshint_conf='~/.jshintrc'
 
-  " For all text files set 'textwidth' to 78 characters.
-  " autocmd FileType text setlocal textwidth=78
+" jshint2.vim
+let jshint2_save = 1
+let jshint2_close = 1
 
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
+set modelines=0
 
-  " Automatically load .vimrc source when saved
-  autocmd BufWritePost .vimrc source $MYVIMRC
+set number " line numbers
+set ruler
+set encoding=utf-8 " Encoding to UTF-8
 
-  augroup END
-
-else
-
-  set autoindent		" always set autoindenting on
-
-endif " has("autocmd")
-
-" if has("folding")
-  " set foldenable
-  " set foldmethod=syntax
-  " set foldlevel=1
-  " set foldnestmax=2
-  " set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
-" endif
-
-" Softtabs, 2 spaces
+" Whitespace and syntax stuff
+syntax on
+color onedark
+" set wrap
 set tabstop=2
 set shiftwidth=2
+set softtabstop=2
 set expandtab
+set backspace=indent,eol,start
+set autoindent
+set list listchars=tab:\ \ ,trail:�
 
-" Always display the status line
-set laststatus=2
+" misc
+set visualbell
+set ttyfast
+set lazyredraw " buffer screen redraws instead of updating all the time
+set shell=/bin/sh
+"set mouse=nicr "enable mouse selection and scrolling
 
-" \ is the leader character
-let mapleader = ","
+set hidden " Allow unsafed buffers
+set wildignore+=gems/gems/*,doc/*,tmp/*,vendor/gems/*,.git,*.rbc,*.class,.svn,*.o,*.obj,public/assets/*,*.png,*.log,*.jpg,.bundle
+set wildmenu
+set wildmode=list:longest
+set guifont="Inconsolata-dz for Powerline":h22
+set laststatus=2 " always display the status line
+set showcmd
 
-" Edit the README_FOR_APP (makes :R commands work)
-map <Leader>R :e doc/README_FOR_APP<CR>
+" Search
+set ignorecase " search case insensitive unless...
+set smartcase  " ...search phrase contains a capital letter
+set incsearch
+set showmatch
+set hlsearch " highlight searches and unhighlight search results with <space>
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+" Have sane search regexpes
+nnoremap / /\v
+vnoremap / /\v
 
-" Leader shortcuts for Rails commands
-map <Leader>m :Rmodel
-map <Leader>c :Rcontroller
-map <Leader>v :Rview
-map <Leader>u :Runittest
-map <Leader>f :Rfunctionaltest
-map <Leader>tm :RTmodel
-map <Leader>tc :RTcontroller
-map <Leader>tv :RTview
-map <Leader>tu :RTunittest
-map <Leader>tf :RTfunctionaltest
-map <Leader>sm :RSmodel
-map <Leader>sc :RScontroller
-map <Leader>sv :RSview
-map <Leader>su :RSunittest
-map <Leader>sf :RSfunctionaltest
+" Movement
+" Have screen-line j/k instead of file-line
+nnoremap j gj
+nnoremap k gk
+" use jj in insert mode to go back to normal mode
+inoremap jj <ESC>
+" Jump between windows
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+noremap <S-J> <C-W>j<C-W>_
+noremap <S-K> <C-W>k<C-W>_
+noremap <S-L> <C-W>l<C-W>_
+noremap <S-H> <C-W>h<C-W>_
+" make backtick behave like ' for marks
+nnoremap ` '
 
-" Hide search highlighting
-map <Leader>h :set invhls <CR>
+" Filetypes
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
+au BufNewFile,BufRead *.json set ft=javascript
 
+if isMac
+  " copy stuff to the macs clipboard
+  vmap <leader>c "+y
+endif
+
+" Mappings
 " Opens an edit command with the path of the currently edited file filled in
-" Normal mode: <Leader>e
-map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+cnoremap %% <C-R>=expand("%:p:h")."/"<CR>
+map <leader>e :e %%
+" Switch between current and previous buffer
+nnoremap <leader><leader> <c-^>
+" Close current Buffer
+nnoremap <leader>d :bnext\|bdelete #<CR>
+" nnoremap <leader>d :b#<bar>bd#<CR>
+" Vim internals
+" Directories for swp files
+set backupdir=~/.vim/backup
+set directory=~/.vim/backup
+set timeoutlen=250  " Time to wait after ESC
+set nobackup
+set noswapfile
 
-" Opens a tab edit command with the path of the currently edited file filled in
-" Normal mode: <Leader>t
-map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+" MacVIM shift+arrow-keys behavior (required in .vimrc)
+let macvim_hig_shift_movement = 1
+let g:lang_user_options='|| exit 0'
 
-" Inserts the path of the currently edited file into a command
-" Command mode: Ctrl+P
-cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+" Plugins
 
-" Duplicate a selection
-" Visual mode: D
-vmap D y'>p
+" Command-T
+let g:CommandTMaxHeight=20
+map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
+map <leader>f :CommandT<cr>
+map <leader>gf :CommandTFlush<cr>\|:CommandT %%<cr>
+map <leader>a :CommandT app/assets/javascripts/<cr>
+set wildignore+=node_modules/**
+set wildignore+=public/map/**
+set wildignore+=socket_dealer/node_modules/**
+set wildignore+=log/**
+set wildignore+=public/system
+set wildignore+=public/test*/**
+set wildignore+=tmp/**
 
-" Press Shift+P while in visual mode to replace the selection without
-" overwriting the default register
-vmap P p :call setreg('"', getreg('0')) <CR>
+" YankRing
+nnoremap <silent> <leader>z :YRShow<CR>
 
-" For Haml
-au! BufRead,BufNewFile *.haml         setfiletype haml
+" Powerline
+let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 1
 
-" No Help, please
-nmap <F1> <Esc>
+" Youcompleteme
+"let g:ycm_complete_in_comments_and_strings = 1
+"let g:ycm_collect_identifiers_from_comments_and_strings = 1
 
-" Press ^F from insert mode to insert the current file name
-imap <C-F> <C-R>=expand("%")<CR>
+" NeoComplete
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#max_list = 10
+let g:neocomplete#sources#syntax#min_keyword_length = 3
 
-" Maps autocomplete to tab
-imap <Tab> <C-N>
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
-imap <C-L> <Space>=><Space>
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
-" Display extra whitespace
-" set list listchars=tab:»·,trail:·
+au WinLeave * set nocursorline
+au WinEnter * set cursorline
+"
+" use the silver searcher instead of ack
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
-" Edit routes
-command! Rroutes :e config/routes.rb
-command! Rschema :e db/schema.rb
-
-" Local config
-if filereadable(".vimrc.local")
-  source .vimrc.local
-endif
-
-" Use Ack instead of Grep when available
-if executable("ack")
-  set grepprg=ack\ -H\ --nogroup\ --nocolor\ --ignore-dir=tmp\ --ignore-dir=coverage
-endif
-
-" Color scheme
-colorscheme atom
-" highlight NonText guibg=#060606
-" highlight Folded  guibg=#0A0A0A guifg=#9090D0
-
-" Numbers
-set number
-set numberwidth=5
-
-" Snippets are activated by Shift+Tab
-let g:snippetsEmu_key = "<S-Tab>"
-
-" Tab completion options
-" (only complete to the longest unambiguous match, and show a menu)
-set completeopt=longest,menu
-set wildmode=list:longest,list:full
-set complete=.,t
-
-" case only matters with mixed case expressions
-set ignorecase
-set smartcase
-
-" Tags
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
-set tags=./tags;
-
-let g:fuf_splitPathMatching=1
-
-" Open URL
-command -bar -nargs=1 OpenURL :!open <args>
-function! OpenURL()
-  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
-  echo s:uri
-  if s:uri != ""
-	  exec "!open \"" . s:uri . "\""
-  else
-	  echo "No URI found in line."
-  endif
-endfunction
-map <Leader>w :call OpenURL()<CR>
+" toggle NERDTree
+map <leader>n :NERDTreeToggle<cr>
+" redraw screen
+"map <leader>r :redraw!<cr>
+" map :Q->:q :W->:w
+map :Q :q<cr>
+map :W :w<cr>
+map :E :e<cr>

@@ -23,7 +23,6 @@
     showDiff: false
   linter:
     lintOnChange: false
-    showErrorPanel: false
     showHighlighting: true
     showInfoMessages: true
     statusBar: "Show error of the selected line"
@@ -31,7 +30,7 @@
       "rubocop"
     ]
   "linter-rubocop":
-    command: "/Users/jan/.rbenv/shims/rubocop"
+    command: "/Users/jan.habermann/.rbenv/shims/rubocop"
   metrics:
     userId: "9e4d32b140be1cb4e975a34a65c17fc15d35c6d7"
   minimap: {}
@@ -44,7 +43,6 @@
     enableVcsColoring: true
   "tree-view":
     hideIgnoredNames: true
-    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
 ".coffee.jsx.source":
