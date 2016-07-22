@@ -9,6 +9,7 @@
       ".git"
       ".svn"
       ".DS_Store"
+      ".tags"
     ]
   editor:
     confirmCheckoutHeadRevision: false
@@ -42,7 +43,9 @@
   tabs:
     enableVcsColoring: true
   "tree-view":
+    autoReveal: true
     hideIgnoredNames: true
+    squashDirectoryNames: true
   welcome:
     showOnStartup: false
 ".coffee.jsx.source":
