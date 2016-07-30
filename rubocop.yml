@@ -1,59 +1,30 @@
 AllCops:
-  Exclude:
-   - 'Rakefile'
-   - 'Gemfile'
-   - 'Capfile'
-   - 'db/**/*'
-   - 'db/schema.rb'
+  TargetRubyVersion: 2.3
+  DisabledByDefault: true
 
-  Rails:
-    Enabled: true
+Lint/Debugger:
+  Enabled: true
 
-Metrics/LineLength:
-  Enabled: false
+Lint/FormatParameterMismatch:
+  Enabled: true
 
-Metrics/MethodLength:
-  CountComments: false
-  Max: 20
+Lint/LiteralInInterpolation:
+  Enabled: true
 
-Metrics/CyclomaticComplexity:
-  Max: 10
+Performance/DoubleStartEndWith:
+  Enabled: true
 
-Metrics/PerceivedComplexity:
-  Max: 10
+Style/For:
+  Enabled: true
 
-Lint/EndAlignment:
-  AlignWith: variable
+Style/InitialIndentation:
+  Enabled: true
 
-Style/CollectionMethods:
-  Enabled: false
+Style/LambdaCall:
+  Enabled: true
 
-Style/GuardClause:
-  Enabled: false
+Style/MultilineIfThen:
+  Enabled: true
 
-Style/SpecialGlobalVars:
-  Enabled: false
-
-Style/FormatString:
-  Enabled: false
-
-Style/AccessModifierIndentation:
-  EnforcedStyle: indent
-
-Style/SignalException:
-  EnforcedStyle: only_raise
-
-Style/AndOr:
-  EnforcedStyle: conditionals
-
-Style/AlignParameters:
-  EnforcedStyle: with_fixed_indentation
-
-Style/FileName:
-  Exclude:
-    - 'Rakefile'
-    - 'Gemfile'
-    - 'Capfile'
-    - '**/Rakefile'
-    - '**/Gemfile'
-    - '**/Capfile'
+Style/OneLineConditional:
+  Enabled: true
