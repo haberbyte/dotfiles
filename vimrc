@@ -12,28 +12,14 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-rails.git'
-Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-bundler'
 Plugin 'wincent/Command-T'
-Plugin 'vim-scripts/YankRing.vim'
-Plugin 'vim-scripts/Rename2'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'vim-scripts/ZoomWin'
-Plugin 'mileszs/ack.vim'
-Plugin 'scrooloose/nerdcommenter.git'
 Plugin 'scrooloose/nerdtree.git'
-Plugin 'tsaleh/vim-align'
-Plugin 'bling/vim-airline'
-Plugin 'skalnik/vim-vroom'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
-"Plugin 'orchardpie/vim-jshint'
-"Plugin 'Shougo/neocomplete'
 Plugin 'ngmy/vim-rubocop'
-call vundle#end()            " required
+call vundle#end()
 
 " Turn on syntax highlighting
 syntax on
