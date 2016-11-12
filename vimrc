@@ -11,14 +11,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-rails.git'
+Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-bundler'
-Plugin 'wincent/Command-T'
 Plugin 'scrooloose/nerdtree.git'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'ngmy/vim-rubocop'
 call vundle#end()
 
 " Turn on syntax highlighting
@@ -105,3 +102,10 @@ map <leader>l :set list!<CR> " Toggle tabs and EOL
 
 " Color scheme
 color onedark
+
+" NERDTree Settings
+map <C-n> :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<cr>
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
