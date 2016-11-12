@@ -2,7 +2,6 @@
 .svn
 *~
 .*.swp
-.powenv
 .rake_tasks
 TAGS
 .tags

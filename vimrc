@@ -1,19 +1,14 @@
-" are we on a mac?
-if has("unix")
-  let s:uname = system("uname")
-  if s:uname == "Darwin\n"
-    let isMac = 1
-  else
-    let isMac = 0
-  endif
-endif
+" Don't try to be vi compatible
+set nocompatible
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" Helps force plugins to load correctly when it is turned back on below
+filetype off
+
+" Load plugins here (vundle)
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
+call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-rails.git'
@@ -38,166 +33,89 @@ Plugin 'airblade/vim-gitgutter'
 "Plugin 'orchardpie/vim-jshint'
 "Plugin 'Shougo/neocomplete'
 Plugin 'ngmy/vim-rubocop'
-
-" All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
 
-let mapleader=","
+" Turn on syntax highlighting
+syntax on
 
-let g:syntastic_javascript_jshint_conf='~/.jshintrc'
+" For plugins to load correctly
+filetype plugin indent on
 
-" jshint2.vim
-let jshint2_save = 1
-let jshint2_close = 1
+" Pick a leader key
+let mapleader = ","
 
+" Security
 set modelines=0
 
-set number " line numbers
-set ruler
-set encoding=utf-8 " Encoding to UTF-8
+" Show line numbers
+set number
 
-" Whitespace and syntax stuff
-syntax on
-color onedark
-" set wrap
+" Show file stats
+set ruler
+
+" Blink cursor on error instead of beeping
+set visualbell
+
+" Encoding
+set encoding=utf-8
+
+" Whitespace
+set wrap
+set textwidth=79
+set formatoptions=tcqrn1
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+set noshiftround
+
+" Cursor motion
+set scrolloff=3
 set backspace=indent,eol,start
-set autoindent
-set list listchars=tab:\ \ ,trail:�
+set matchpairs+=<:> " use % to jump between pairs
+set mouse=nicr
+runtime! macros/matchit.vim
 
-" misc
-set visualbell
-set ttyfast
-set lazyredraw " buffer screen redraws instead of updating all the time
-set shell=/bin/sh
-"set mouse=nicr "enable mouse selection and scrolling
-
-set hidden " Allow unsafed buffers
-set wildignore+=gems/gems/*,doc/*,tmp/*,vendor/gems/*,.git,*.rbc,*.class,.svn,*.o,*.obj,public/assets/*,*.png,*.log,*.jpg,.bundle
-set wildmenu
-set wildmode=list:longest
-set guifont="Inconsolata-dz for Powerline":h22
-set laststatus=2 " always display the status line
-set showcmd
-
-" Search
-set ignorecase " search case insensitive unless...
-set smartcase  " ...search phrase contains a capital letter
-set incsearch
-set showmatch
-set hlsearch " highlight searches and unhighlight search results with <space>
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-" Have sane search regexpes
-nnoremap / /\v
-vnoremap / /\v
-
-" Movement
-" Have screen-line j/k instead of file-line
+" Move up/down editor lines
 nnoremap j gj
 nnoremap k gk
-" use jj in insert mode to go back to normal mode
-inoremap jj <ESC>
-" Jump between windows
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-noremap <S-J> <C-W>j<C-W>_
-noremap <S-K> <C-W>k<C-W>_
-noremap <S-L> <C-W>l<C-W>_
-noremap <S-H> <C-W>h<C-W>_
-" make backtick behave like ' for marks
-nnoremap ` '
 
-" Filetypes
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
-au BufNewFile,BufRead *.json set ft=javascript
+" Allow hidden buffers
+set hidden
 
-if isMac
-  " copy stuff to the macs clipboard
-  vmap <leader>c "+y
-endif
+" Rendering
+set ttyfast
+set lazyredraw
 
-" Mappings
-" Opens an edit command with the path of the currently edited file filled in
-cnoremap %% <C-R>=expand("%:p:h")."/"<CR>
-map <leader>e :e %%
-" Switch between current and previous buffer
-nnoremap <leader><leader> <c-^>
-" Close current Buffer
-nnoremap <leader>d :bnext\|bdelete #<CR>
-" nnoremap <leader>d :b#<bar>bd#<CR>
-" Vim internals
-" Directories for swp files
-set backupdir=~/.vim/backup
-set directory=~/.vim/backup
-set timeoutlen=250  " Time to wait after ESC
-set nobackup
-set noswapfile
+" Status bar
+set laststatus=2
 
-" MacVIM shift+arrow-keys behavior (required in .vimrc)
-let macvim_hig_shift_movement = 1
-let g:lang_user_options='|| exit 0'
+" Last line
+set showmode
+set showcmd
 
-" Plugins
+" Searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set showmatch
+map <leader><space> :let @/=''<cr> " clear search
 
-" Command-T
-let g:CommandTMaxHeight=20
-map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
-map <leader>f :CommandT<cr>
-map <leader>gf :CommandTFlush<cr>\|:CommandT %%<cr>
-map <leader>a :CommandT app/assets/javascripts/<cr>
-set wildignore+=node_modules/**
-set wildignore+=public/map/**
-set wildignore+=socket_dealer/node_modules/**
-set wildignore+=log/**
-set wildignore+=public/system
-set wildignore+=public/test*/**
-set wildignore+=tmp/**
+" Remap help key.
+inoremap <F1> <ESC>:set invfullscreen<CR>a
+nnoremap <F1> :set invfullscreen<CR>
+vnoremap <F1> :set invfullscreen<CR>
 
-" YankRing
-nnoremap <silent> <leader>z :YRShow<CR>
+" Formatting
+map <leader>q gqip
 
-" Powerline
-let g:Powerline_symbols = 'fancy'
-let g:airline_powerline_fonts = 1
+" Visualize tabs and newlines
+set listchars=tab:▸\ ,eol:¬
+" Uncomment this to enable by default:
+" set list " To enable by default
+" Or use your leader key + l to toggle on/off
+map <leader>l :set list!<CR> " Toggle tabs and EOL
 
-" Youcompleteme
-"let g:ycm_complete_in_comments_and_strings = 1
-"let g:ycm_collect_identifiers_from_comments_and_strings = 1
-
-" NeoComplete
-let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#max_list = 10
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-
-au WinLeave * set nocursorline
-au WinEnter * set cursorline
-"
-" use the silver searcher instead of ack
-let g:ackprg = 'ag --nogroup --nocolor --column'
-
-" toggle NERDTree
-map <leader>n :NERDTreeToggle<cr>
-" redraw screen
-"map <leader>r :redraw!<cr>
-" map :Q->:q :W->:w
-map :Q :q<cr>
-map :W :w<cr>
-map :E :e<cr>
+" Color scheme
+color onedark
