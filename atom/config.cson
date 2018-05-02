@@ -1,4 +1,10 @@
 "*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "615e7261-62fe-4eee-bc13-1eb1a71dd33a"
+  "atom-pair":
+    pusher_app_key: "c9c62252541def507110"
+    pusher_app_secret: "4e03e63d702a415a5030"
   "autocomplete-plus": {}
   core:
     disabledPackages: [
@@ -12,10 +18,11 @@
       ".tags"
     ]
     telemetryConsent: "no"
-    useCustomTitleBar: true
+    titleBar: "custom"
   editor:
     confirmCheckoutHeadRevision: false
     fontFamily: "Menlo"
+    fontSize: 16
     invisibles: {}
     preferredLineLength: 120
     showInvisibles: true
@@ -24,6 +31,9 @@
   "fuzzy-finder": {}
   "git-history":
     showDiff: false
+  "git-plus":
+    general:
+      _analyticsUserId: "17150e82-9e0f-4c81-a8b1-69f9f7542251"
   linter:
     lintOnChange: false
     showHighlighting: true
@@ -33,14 +43,16 @@
       "rubocop"
     ]
   "linter-rubocop":
-    command: "/Users/jan/.rbenv/shims/rubocop"
+    command: "/Users/jan.habermann/.rbenv/shims/rubocop"
+  "linter-ui-default":
+    panelHeight: 69
+  "markdown-preview": {}
   metrics:
     userId: "9e4d32b140be1cb4e975a34a65c17fc15d35c6d7"
   minimap: {}
-  "one-dark-ui":
-    layoutMode: "Compact"
+  "one-dark-ui": {}
   pigments:
-    markerType: "dot"
+    markerType: "native-underline"
   react: {}
   tabs:
     enableVcsColoring: true
