@@ -43,7 +43,7 @@
       "rubocop"
     ]
   "linter-rubocop":
-    command: "/Users/jan.habermann/.rbenv/shims/rubocop"
+    command: "/Users/jan/.rbenv/shims/rubocop"
   "linter-ui-default":
     panelHeight: 300
   "markdown-preview": {}
