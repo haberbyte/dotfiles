@@ -17,7 +17,7 @@ Performance/DoubleStartEndWith:
 Style/For:
   Enabled: true
 
-Style/InitialIndentation:
+Layout/InitialIndentation:
   Enabled: true
 
 Style/LambdaCall:
