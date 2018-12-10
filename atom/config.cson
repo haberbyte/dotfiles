@@ -21,7 +21,7 @@
     titleBar: "custom"
   editor:
     confirmCheckoutHeadRevision: false
-    fontFamily: "Menlo"
+    fontFamily: "Monaco"
     fontSize: 16
     invisibles: {}
     preferredLineLength: 120
