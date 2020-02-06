@@ -7,6 +7,7 @@ Run the following commands in your terminal. It will prompt you before it does a
 ```terminal
 git clone git://github.com/habermann24/dotfiles ~/.dotfiles
 cd ~/.dotfiles
+git submodule update
 rake install
 ```
 
