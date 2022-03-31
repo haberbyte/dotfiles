@@ -3,11 +3,5 @@
 *~
 .*.swp
 vim/.*
-atom/dev
-atom/packages
-atom/storage
-atom/compile-cache
-atom/blob-store
-atom/.*
 TAGS
 .tags

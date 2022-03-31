@@ -5,7 +5,7 @@ DISABLE_LS_COLORS="true"
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
-plugins=(jan bundler brew capistrano gem git rake-fast tmux zsh-syntax-highlighting)
+plugins=(jan bundler brew gem git zsh-syntax-highlighting)
 
 export LANG="en_US.UTF-8"
 export LC_COLLATE="en_US.UTF-8"
@@ -16,7 +16,7 @@ export LC_NUMERIC="en_US.UTF-8"
 export LC_TIME="en_US.UTF-8"
 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-export EDITOR='atom --wait'
+export EDITOR='code --wait'
 export LESS="-RFX"
 
 source $ZSH/oh-my-zsh.sh
