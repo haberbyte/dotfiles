@@ -30,17 +30,6 @@ There is also an "h" command which behaves similar, but acts on the home path.
 h doc<tab>
 ```
 
-Tab completion is also added to rake and cap commands:
-
-```
-rake db:mi<tab>
-cap de<tab>
-```
-
-To speed things up, the results are cached in local .rake_tasks~ and .cap_tasks~. It is smart enough to expire the cache automatically in most cases, but you can simply remove the files to flush the cache.
-
-If you're using git, you'll notice the current branch name shows up in the prompt while in a git repository.
-
 There are several features enabled in Ruby's irb including history and completion. Many convenience methods are added as well such as "ri" which can be used to get inline documentation in IRB. See irbrc file for details.
 
 
@@ -49,12 +38,9 @@ There are several features enabled in Ruby's irb including history and completio
 To remove the dotfile configs, run the following commands. Be certain to double check the contents of the files before removing so you don't lose custom settings.
 
 ```
-unlink ~/.bin
 unlink ~/.gitignore
 unlink ~/.gemrc
 unlink ~/.irbrc
-unlink ~/.vim
-unlink ~/.vimrc
 rm ~/.zshrc # careful here
 rm ~/.gitconfig
 rm -rf ~/.dotfiles
