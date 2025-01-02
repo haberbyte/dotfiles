@@ -18,6 +18,13 @@ export LC_TIME="en_US.UTF-8"
 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
+# Editor
+export EDITOR="nvim"
+
+alias n="nvim $1"
+alias vi=nvim
+alias vim=nvim
+
 source $ZSH/oh-my-zsh.sh
 
 # for Homebrew installed rbenv
