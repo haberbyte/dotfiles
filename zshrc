@@ -33,3 +33,8 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # for Homebrew installed nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && source $(brew --prefix nvm)/nvm.sh
+
+# Postgres
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
