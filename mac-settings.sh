@@ -23,4 +23,3 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # Disable writing .DS_Store files on network drives
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-
