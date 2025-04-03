@@ -1,5 +1,3 @@
-tap "homebrew/bundle"
-tap "homebrew/services"
 brew "cmake"
 brew "git"
 brew "libpq"
